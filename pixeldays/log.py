@@ -24,7 +24,7 @@ MOOD_SCALE = {
 # Left 7 8ths block. tall and narrow. gaps horizontally.
 DAY_BLOCK = '▉'
 
-PATH = 'data.csv'
+PATH = 'var/data.csv'
 
 
 def load(path):
