@@ -1,13 +1,12 @@
+"""
+Log application.
+"""
 import csv
 
 from colors import color
 
-with open('data.csv') as f_in:
-    reader = csv.reader(f_in)
-    days = [day for row in reader for day in row]
 
-
-COLOR_MAP = {
+MOOD_SCALE = {
     1: 'red',
     2: 'orange',
     3: 'yellow',
@@ -21,14 +20,22 @@ COLOR_MAP = {
 # '◾' '◼' '▩'
 
 # Full block. no gaps horizontally.
-# SQUARE = '█'
+# DAY_BLOCK = '█'
 # Left 7 8ths block. tall and narrow. gaps horizontally.
-SQUARE = '▉'
+DAY_BLOCK = '▉'
+
+
+with open('data.csv') as f_in:
+    reader = csv.reader(f_in)
+    days = [day for row in reader for day in row]
+
+
 
 for i, value in enumerate(days):
-    c = COLOR_MAP[int(value)]
+    color_name = MOOD_SCALE[int(value)]
 
-    print(color(SQUARE, fg=c), end="")
+    print(color(DAY_BLOCK, fg=color_name), end="")
+    
     if (i+1) % 7 == 0:
         print()
 print()
