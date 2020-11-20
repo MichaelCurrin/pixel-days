@@ -7,11 +7,11 @@ from colors import color
 
 
 MOOD_SCALE = {
-    1: 'red',
-    2: 'orange',
-    3: 'yellow',
-    4: 'light green',
-    5: 'green',
+    1: "red",
+    2: "orange",
+    3: "yellow",
+    4: "light green",
+    5: "green",
 }
 
 # https://www.w3schools.com/charsets/ref_utf_block.asp
@@ -22,9 +22,9 @@ MOOD_SCALE = {
 # Full block. no gaps horizontally.
 # DAY_BLOCK = '█'
 # Left 7 8ths block. tall and narrow. gaps horizontally.
-DAY_BLOCK = '▉'
+DAY_BLOCK = "▉"
 
-PATH = 'var/data.csv'
+PATH = "var/data.csv"
 
 
 def load(path):
@@ -50,7 +50,7 @@ def main():
         output = to_color(value)
         print(output, end="")
 
-        if (i+1) % 7 == 0:
+        if (i + 1) % 7 == 0:
             print()
     print()
 
