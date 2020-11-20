@@ -1,2 +1,5 @@
+black
+
+flake8
 pylint
-autopep8
+pylint-exit
