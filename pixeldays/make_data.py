@@ -1,3 +1,6 @@
+"""
+Generate random data.
+"""
 import random
 
 
