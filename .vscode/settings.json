@@ -1,0 +1,8 @@
+{
+    "terminal.integrated.cwd": "pixeldays",
+    "code-runner.cwd": "pixeldays",
+
+    "python.pythonPath": "venv/bin/python",
+
+    "editor.rulers": [80]
+}
