@@ -24,18 +24,36 @@ MOOD_SCALE = {
 # Left 7 8ths block. tall and narrow. gaps horizontally.
 DAY_BLOCK = '▉'
 
-
-with open('data.csv') as f_in:
-    reader = csv.reader(f_in)
-    days = [day for row in reader for day in row]
+PATH = 'data.csv'
 
 
+def load(path):
+    with open() as f_in:
+        reader = csv.reader(f_in)
+        days = [day for row in reader for day in row]
 
-for i, value in enumerate(days):
+    return days
+
+
+def to_color(value):
     color_name = MOOD_SCALE[int(value)]
-
-    print(color(DAY_BLOCK, fg=color_name), end="")
     
-    if (i+1) % 7 == 0:
-        print()
-print()
+    color_string = color(DAY_BLOCK, fg=color_name)
+    
+    return color_string
+
+
+def main():
+    days = load(PATH)
+
+    for i, value in enumerate(days):
+        output = to_color(value)
+        print(output, end="")
+
+        if (i+1) % 7 == 0:
+            print()
+    print()
+
+
+if __name__ == "__main__":
+    main()
