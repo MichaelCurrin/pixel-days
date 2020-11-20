@@ -28,7 +28,7 @@ PATH = 'data.csv'
 
 
 def load(path):
-    with open() as f_in:
+    with open(path) as f_in:
         reader = csv.reader(f_in)
         days = [day for row in reader for day in row]
 
@@ -37,9 +37,9 @@ def load(path):
 
 def to_color(value):
     color_name = MOOD_SCALE[int(value)]
-    
+
     color_string = color(DAY_BLOCK, fg=color_name)
-    
+
     return color_string
 
 
